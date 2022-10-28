@@ -19,7 +19,7 @@ jobs:
         with:
           images: ${{ github.event.repository.name }}
           tags: |
-            type=raw,value="123"
+            type=raw,value=123
             
       - name: Run a one-line script
         run: echo ${{ steps.meta.outputs.tags }}
