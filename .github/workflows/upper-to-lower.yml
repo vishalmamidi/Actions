@@ -1,0 +1,26 @@
+name: upper-to-lower
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  convert:
+    name: "convert"
+    runs-on: ubuntu-latest
+    steps:
+    
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ github.event.repository.name }}
+          tags: |
+            type=raw,value="123"
+            
+      - name: Run a one-line script
+        run: echo ${{ steps.meta.outputs.tags }}
+
