@@ -35,3 +35,16 @@ jobs:
         run: echo ${{ steps.meta2.outputs.tags }}
         
         
+        
+      - name: Docker meta
+        id: meta3
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ github.event.repository.name }}
+          tags: |
+            type=raw,value=
+            
+      - name: Run a one-line script
+        run: echo ${{ steps.meta3.outputs.tags }}
+        
+        
