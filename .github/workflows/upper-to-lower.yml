@@ -24,3 +24,14 @@ jobs:
       - name: Run a one-line script
         run: echo ${{ steps.meta.outputs.tags }}
 
+
+      - name: Docker meta
+        id: meta2
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ github.event.repository.name }}
+            
+      - name: Run a one-line script
+        run: echo ${{ steps.meta2.outputs.tags }}
+        
+        
