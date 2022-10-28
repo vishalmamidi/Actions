@@ -34,7 +34,13 @@ jobs:
       - name: Run a one-line script
         run: echo ${{ steps.meta2.outputs.tags }}
         
+      - id: string
+        uses: ASzc/change-string-case-action@v4
+        with:
+          string: ${{ github.event.repository.name }}
         
+      - name: Run a one-line script
+        run: echo ${{ steps.string.outputs.lowercase }}
         
       - name: Docker meta
         id: meta3
@@ -42,7 +48,7 @@ jobs:
         with:
           images: ${{ github.event.repository.name }}
           tags: |
-            type=raw,value=
+            type=raw,value=""
             
       - name: Run a one-line script
         run: echo ${{ steps.meta3.outputs.tags }}
