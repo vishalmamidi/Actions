@@ -39,18 +39,9 @@ jobs:
         with:
           string: ${{ github.event.repository.name }}
         
-      - name: Run a one-line script
+      - name: print lowercase string
         run: echo ${{ steps.string.outputs.lowercase }}
         
-        
-        
-#       - id: string
-#         uses: ASzc/change-string-case-action@v4
-#         with:
-#           string: ${{ github.event.repository.name }}
-        
-#       - name: Run a one-line script
-#         run: echo ${{ steps.string.outputs.lowercase }}
         
 #       - name: Docker meta
 #         id: meta3
