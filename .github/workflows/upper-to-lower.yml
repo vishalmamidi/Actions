@@ -35,7 +35,7 @@ jobs:
         run: echo ${{ steps.meta2.outputs.tags }}
         
       - id: string
-        uses: vishalmamidi/string-case-action@v1
+        uses: vishalmamidi/lowercase-action@v1
         with:
           string: ${{ github.event.repository.name }}
         
