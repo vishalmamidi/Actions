@@ -1,4 +1,4 @@
-name: upper-to-lower
+name: console output
 
 on:
   push:
@@ -21,9 +21,6 @@ jobs:
       - name: ls
         run: |
           ls
-        shell: bash
-
-      - name: tree
-        run: |
           tree
-        shell: bash
+#         shell: bash
+
