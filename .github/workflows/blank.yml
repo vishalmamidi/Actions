@@ -1,0 +1,29 @@
+name: upper-to-lower
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  console:
+    name: "console"
+    runs-on: ubuntu-latest
+    steps:
+    
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+
+      - name: ls
+        run: |
+          ls
+        shell: bash
+
+      - name: tree
+        run: |
+          tree
+        shell: bash
